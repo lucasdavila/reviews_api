@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+return unless Rails.env.development?
+
+Review.create(body: 'Awesome hotel!', author: 'Jake the Dog', data: { hotel_id: 1 })
+Review.create(body: 'Loved this hotel!', author: 'Finn the human', data: { hotel_id: 2 })
+Review.create(rating: 5, author: 'Princess bubblegum', data: { restaurant_id: '8f4bce50-4f07-4ec8-801e-28ca7267948e' })
+Review.create(rating: 1, author: 'Lumpy Space Princess', data: { restaurant_id: '8f4bce50-4f07-4ec8-801e-28ca7267948e' })

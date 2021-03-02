@@ -1,24 +1,48 @@
-# README
+# Reviews
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple review API made with Ruby On Rails and GraphhQL.
 
-Things you may want to cover:
+## development env setup
 
-* Ruby version
+After clonning this repo, run the commands bellow:
 
-* System dependencies
+* `bundle install`
+* `rails db:prepare`
 
-* Configuration
+## commom commands
 
-* Database creation
+### starting the dev server
 
-* Database initialization
+* `rails s`
 
-* How to run the test suite
+### running specs
 
-* Services (job queues, cache servers, search engines, etc.)
+* `bundle rspec`
 
-* Deployment instructions
+### running rubocop (linter)
 
-* ...
+* `rubocop -a`
+
+## GraphQL queries
+
+To run the queries below, make sure you have a GraphQL client, like the "Altair GraphQL Client" extension for chrome.
+
+List both Hotel and Restaurants reviews:
+
+```graphql
+query {
+  reviews {
+    ... on HotelReview {
+      id
+      review
+      author
+    }
+
+    ... on RestaurantReview {
+      id
+      review
+      author
+    }
+  }
+}
+```
