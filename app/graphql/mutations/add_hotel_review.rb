@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Mutations
   class AddHotelReview < BaseMutation
     field :hotel_review, Types::HotelReviewType, null: false

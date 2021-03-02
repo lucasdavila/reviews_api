@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 module Types
   class ReviewType < Types::BaseUnion
     possible_types Types::HotelReviewType, Types::RestaurantReviewType
 
-    def self.resolve_type(object, context)
+    def self.resolve_type(object, _context)
       if object.hotel?
         Types::HotelReviewType
       elsif object.restaurant?

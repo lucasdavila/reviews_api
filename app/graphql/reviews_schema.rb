@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class ReviewsSchema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)

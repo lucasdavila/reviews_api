@@ -33,7 +33,7 @@ Add an hotel review:
 
 ```graphql
 mutation {
-  addHotelReview(input: { id: 1, review: "Loved this hotel!", author: "Lucas D'Avila"  }) {
+  addHotelReview(input: { id: 1, review: "Loved this hotel!", author: "Lucas D'Avila" }) {
     hotelReview {
       id
       review
@@ -43,11 +43,11 @@ mutation {
 }
 ```
 
-Add restaurant review:
+Add restaurant review, by using mutations:
 
 ```graphql
 mutation {
-  addRestaurantReview(input: { id: "18547395-3c71-4f4c-b62b-3f1382c66c82", review: 5, author: "Lucas D'Avila"  }) {
+  addRestaurantReview(input: { id: "18547395-3c71-4f4c-b62b-3f1382c66c82", review: 5, author: "Lucas D'Avila" }) {
     restaurantReview {
       id
       review

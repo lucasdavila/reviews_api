@@ -6,3 +6,6 @@ AllCops:
 
 Documentation:
   Enabled: false
+
+Metrics/BlockLength:
+  IgnoredMethods: ['describe', 'context', 'namespace', 'shared_examples', 'task', 'let']

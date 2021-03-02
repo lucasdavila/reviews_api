@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Mutations
   class AddRestaurantReview < BaseMutation
     field :restaurant_review, Types::RestaurantReviewType, null: false

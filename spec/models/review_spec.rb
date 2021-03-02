@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Review, type: :model do
@@ -11,8 +12,13 @@ RSpec.describe Review, type: :model do
       before { subject.valid? }
 
       it 'requires hotel_id or restaurant_id' do
-        expect(subject.errors['data']).to include(match("The property '#/' did not contain a required property of 'hotel_id'"))
-        expect(subject.errors['data']).to include(match("The property '#/' did not contain a required property of 'restaurant_id'"))
+        expect(subject.errors['data']).to(
+          include(match("The property '#/' did not contain a required property of 'hotel_id'"))
+        )
+
+        expect(subject.errors['data']).to(
+          include(match("The property '#/' did not contain a required property of 'restaurant_id'"))
+        )
       end
     end
 
@@ -29,7 +35,9 @@ RSpec.describe Review, type: :model do
         end
 
         it 'validates hotel_id is integer' do
-          expect(subject.errors['data']).to include(match("The property '#/hotel_id' of type string did not match the following type: integer"))
+          expect(subject.errors['data']).to(
+            include(match("The property '#/hotel_id' of type string did not match the following type: integer"))
+          )
         end
       end
     end
@@ -54,7 +62,9 @@ RSpec.describe Review, type: :model do
         let(:restaurant_id) { 'abc' }
 
         it 'validates restaurant_id is in uuid format' do
-          expect(subject.errors['data']).to include(match("The property '#/restaurant_id' value \"abc\" did not match the regex"))
+          expect(subject.errors['data']).to(
+            include(match("The property '#/restaurant_id' value \"abc\" did not match the regex"))
+          )
         end
 
         context 'with a valid uuid' do

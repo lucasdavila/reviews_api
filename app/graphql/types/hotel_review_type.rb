@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Types
   class HotelReviewType < Types::BaseObject
     field :id, Int, null: false

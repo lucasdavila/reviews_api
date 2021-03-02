@@ -1,6 +1,7 @@
 # frozen_string_literal: true
+
 class Review < ApplicationRecord
-  DATA_JSON_SCHEMA = "#{Rails.root}/app/models/schemas/review/data.json"
+  DATA_JSON_SCHEMA = Rails.root.join('app/models/schemas/review/data.json').to_s
 
   validates :author, presence: true
   validates :body, presence: true, length: { minimum: 10 }, if: :hotel?
