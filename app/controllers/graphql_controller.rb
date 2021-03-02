@@ -6,6 +6,8 @@ class GraphqlController < ApplicationController
   # but you'll have to authenticate your user separately
   # protect_from_forgery with: :null_session
 
+  before_action :authorize!
+
   def execute
     variables = prepare_variables(params[:variables])
     query = params[:query]
@@ -52,5 +54,13 @@ class GraphqlController < ApplicationController
 
     render json: { errors: [{ message: error.message, backtrace: error.backtrace }], data: {} },
            status: :internal_server_error
+  end
+
+  def authorize!
+    if request.headers[:HTTP_API_KEY].present? && request.headers[:HTTP_API_KEY] == Rails.configuration.auth[:api_key]
+      return
+    end
+
+    render status: :unauthorized
   end
 end

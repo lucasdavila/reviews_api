@@ -1,0 +1,8 @@
+production:
+  api_key: <%= ENV.fetch("AUTH_API_KEY") { "50bXrZX9Shj8KJLGdnq55GUuT2pqZwkqNQWEbUWG0D1Bt30Q2CerTZ8fSXezhpYa" } %>
+
+development:
+  api_key: bJLM5dejsn4BNHPIS4gl37qEdJlMRjKMTy6SJ8EI88fmbCkSZLnPDlqCrDtuWjuc
+
+test:
+  api_key: c3Ek8dKJAfoqKXXhQN5bzbPKcz2vjqGWMqsP8GN0Qk5kzvmLJMihhsok1PZubZGD

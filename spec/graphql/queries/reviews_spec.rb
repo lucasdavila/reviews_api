@@ -31,8 +31,12 @@ RSpec.describe Queries::Reviews, type: :request do
       QUERY
     end
 
+    it_behaves_like 'api key authorization'
+
     it 'fetches both hotel and restaurant reviews' do
-      post '/graphql', params: { query: query }
+      post '/graphql', params: { query: query }, headers: headers
+
+      expect(response.status).to eq 200
 
       expect(response_data['data']['reviews']).to include(
         '__typename' => 'HotelReview',

@@ -27,9 +27,11 @@ After clonning this repo, run the commands bellow:
 
 To run the queries below, make sure you have a GraphQL client, like the "Altair GraphQL Client" extension for chrome.
 
-`POST: http://127.0.0.1:3000/graphql`
+* Then do a `POST` request to `http://127.0.0.1:3000/graphql`, with one of the queries listed below:
 
-Add an hotel review:
+  Make sure you set an `API_KEY` header with the api_key configured on `config/auth.yml`, for the current env in use.
+
+* Add an hotel review:
 
 ```graphql
 mutation {
@@ -43,7 +45,7 @@ mutation {
 }
 ```
 
-Add restaurant review, by using mutations:
+* Add restaurant review, by using mutations:
 
 ```graphql
 mutation {
@@ -57,7 +59,7 @@ mutation {
 }
 ```
 
-Fetch both Hotel and Restaurants reviews:
+* Fetch both Hotel and Restaurants reviews:
 
 ```graphql
 query {
