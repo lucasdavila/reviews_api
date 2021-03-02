@@ -1,6 +1,6 @@
 module Types
   class HotelReviewType < Types::BaseObject
-    field :id, ID, null: false
+    field :id, Int, null: false
     field :review, String, null: false
     field :author, String, null: false
 

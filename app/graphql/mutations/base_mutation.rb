@@ -5,5 +5,9 @@ module Mutations
     field_class Types::BaseField
     input_object_class Types::BaseInputObject
     object_class Types::BaseObject
+
+    def model_errors(model)
+      GraphQL::ExecutionError.new("Error on save #{model.class}: #{model.errors.full_messages.join(', ')}")
+    end
   end
 end
